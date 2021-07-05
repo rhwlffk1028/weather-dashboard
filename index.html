@@ -5,60 +5,68 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/assets/reset.css">
+        <link rel="stylesheet" href="./assets/reset.css">
         <link rel="stylesheet" href="./assets/style.css">
         <title>Document</title>
     </head>
 
     <body>
         <!-- header -->
-        <header class="header-background text-center py-3 bg-primary">
-            <h1>
+        <header class="bg-primary text-white text-center py-2">
+            <h1 class="display-4">
                 <strong>Weather Dashboard</strong>
             </h1>
         </header>
 
-        <main class="d-inline">
-            <!-- search bar and search history -->
-            <aside>
-                <!-- search bar -->
-                <div class="search-box mb-2">
-                    <h2><strong>Search for a City:</strong></h2>
-                    <input type="text" placeholder="Search for City">
-                    <button type="button" class="btn btn-primary search-btn">Search</button>
+        <main class="container-fluid">
+            <div class="row gx-5 my-3 mx-1">
+                <!-- Side bar column for CITY SEARCH and SEARCH HISTORY -->
+                <div class="col-3 col-sm-12 col-md-3 col-lg-3 mx-2" name="side-bar">
+                    <!-- CITY SEARCH row -->
+                    <div class="row p-3 mb-3 border border-primary border-5 rounded" name="search-bar">
+                        <form id="search-form" class="d-grid">
+                            <h2><strong>Search for a City:</strong></h2>
+                            <input type="text" class="form-control mb-3" id="city-input" placeholder="Type a City">
+                            <button type="submit" class="btn btn-primary" id="search-Btn">Search</button>
+                        </form>
+                        <p class="d-none" id="invalid-search">Please type valid city.</p>
+                    </div>
+                    <!-- SEARCH HISTORY row -->
+                    <div class="row p-3 mb-3 border border-primary border-5 rounded" name="history-bar">
+                        <h2><strong>Previous searched cities:</strong></h2>
+                        <div class="list-gorup" id="searched-cities">
+                            <!-- handled in JS. -->
+                        </div>
+                    </div>
                 </div>
+                    
+                <!-- Main section column for CITY INFO and 5DAY FORECAST -->
+                <div class="col-8 col-sm-12 col-md-8 col-lg-8 mx-2" name="weather-info">
+                    <!-- CITY INFO row -->
+                    <div class="row p-3 mb-3 border border-primary border-5 rounded" id="city-weather-info" name="city-weather-info">
+                        <h2><strong>City Weather Information:</strong></h2>
+                    </div>
 
-                <!-- search history -->
-                <div class="history-box d-block text-center">
-                    <!-- this will be DOM created in JS -->
-                    <button type="button" class="btn btn-secondary history-btn">New York</button>
-                    <button type="button" class="btn btn-secondary history-btn">Seattle</button>
-                    <button type="button" class="btn btn-secondary history-btn">Los Angeles</button>
-                    <button type="button" class="btn btn-secondary history-btn">Orlando</button>
-                    <button type="button" class="btn btn-secondary history-btn">Seoul</button>
-                    <button type="button" class="btn btn-secondary history-btn">Portland</button>
+                    <!-- 5DAY FORECAST row -->
+                    <div class="row p-3 mb-3 border border-primary border-5 rounded" name="5-day-forecast">
+                        <div class="row">
+                            <h2><strong>5-day-forecast:</strong></h2>
+                        </div>
+
+                        <div class="row" id="city-forecast-container">
+                            <!-- 5 cards with weather information for each day -->
+                        </div>
+                    </div>
                 </div>
-            </aside>
+            </div>
 
-            <!-- weather information and 5-day forecast -->
-            <section class="d-flex">
-                <!-- weather information for the city -->
-                <div class="border">
-                    <p>adfasdfasdf</p>
-                </div>
-
-                <!-- 5-day forecast for the city -->
-                <div>
-
-                </div>
-            </seciton>
         </main>
 
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="./assets/js/script.js"></script>
+        <script src="./assets/script.js"></script>
     </body>
 </html>

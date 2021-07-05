@@ -1,13 +1,6 @@
-h1 {
-
-   color: white; 
-}
-
 aside {
-    box-sizing: border-box;
     width: 30vw;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 20px 40px 0 20px;
 }
 
 input {
@@ -16,8 +9,8 @@ input {
 }
 
 section {
-    box-sizing: border-box;
     width: 60vw;
+    margin-top: 20px;
 }
 
 .search-box {
@@ -34,4 +27,24 @@ section {
     width: 80%;
     margin: 5px 0 10px 0;
     font-weight: bold;
+}
+
+.weather-display-box {
+    width: 100%
+}
+
+#uv-favorable {
+    background-color: green;
+}
+
+#uv-moderate {
+    background-color: orange;
+}
+
+#uv-severe {
+    background-color: red;
+}
+
+#card-color {
+    background-color: rgb(45, 53, 95);
 }
