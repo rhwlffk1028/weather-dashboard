@@ -14,7 +14,7 @@
 
     <body>
         <!-- header -->
-        <header class="bg-primary text-white text-center py-2">
+        <header class="bg-primary bg-gradient text-white text-center py-2">
             <h1 class="display-4">
                 <strong>Weather Dashboard</strong>
             </h1>
@@ -29,14 +29,13 @@
                         <form id="search-form" class="d-grid">
                             <h2><strong>Search for a City:</strong></h2>
                             <input type="text" class="form-control mb-3" id="city-input" placeholder="Type a City">
-                            <button type="submit" class="btn btn-primary" id="search-Btn">Search</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
                         </form>
-                        <p class="d-none" id="invalid-search">Please type valid city.</p>
                     </div>
                     <!-- SEARCH HISTORY row -->
                     <div class="row p-3 mb-3 border border-primary border-5 rounded" name="history-bar">
                         <h2><strong>Previous searched cities:</strong></h2>
-                        <div class="list-gorup" id="searched-cities">
+                        <div class="list-gorup" id="searched-cities-btn">
                             <!-- handled in JS. -->
                         </div>
                     </div>
@@ -45,8 +44,13 @@
                 <!-- Main section column for CITY INFO and 5DAY FORECAST -->
                 <div class="col-8 col-sm-12 col-md-8 col-lg-8 mx-2" name="weather-info">
                     <!-- CITY INFO row -->
-                    <div class="row p-3 mb-3 border border-primary border-5 rounded" id="city-weather-info" name="city-weather-info">
-                        <h2><strong>City Weather Information:</strong></h2>
+                    <div class="row p-3 mb-3 border border-primary border-5 rounded" name="city-weather-info">
+                        <div class="row">
+                            <h2><strong>City Weather Information:</strong></h2>
+                        </div>
+
+                        <div class="row" id="city-weather-info">
+                        </div>
                     </div>
 
                     <!-- 5DAY FORECAST row -->
@@ -61,9 +65,7 @@
                     </div>
                 </div>
             </div>
-
         </main>
-
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
